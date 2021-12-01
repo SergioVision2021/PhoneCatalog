@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		188C5C042757F58E00FDCDEE /* XibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C5C022757F58E00FDCDEE /* XibTableViewCell.swift */; };
 		188C5C052757F58E00FDCDEE /* XibTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188C5C032757F58E00FDCDEE /* XibTableViewCell.xib */; };
+		188C5C072757FDA500FDCDEE /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C5C062757FDA500FDCDEE /* PhoneViewController.swift */; };
 		18E54EB52750131E00E02C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54EB42750131E00E02C77 /* AppDelegate.swift */; };
 		18E54EB72750131E00E02C77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54EB62750131E00E02C77 /* SceneDelegate.swift */; };
 		18E54EB92750131E00E02C77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54EB82750131E00E02C77 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		188C5C022757F58E00FDCDEE /* XibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTableViewCell.swift; sourceTree = "<group>"; };
 		188C5C032757F58E00FDCDEE /* XibTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibTableViewCell.xib; sourceTree = "<group>"; };
+		188C5C062757FDA500FDCDEE /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		18E54EB12750131E00E02C77 /* PhonesData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonesData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E54EB42750131E00E02C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E54EB62750131E00E02C77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				18E54EB62750131E00E02C77 /* SceneDelegate.swift */,
 				18E54EB82750131E00E02C77 /* ViewController.swift */,
 				18E54EBA2750131E00E02C77 /* Main.storyboard */,
+				188C5C062757FDA500FDCDEE /* PhoneViewController.swift */,
 				188C5C022757F58E00FDCDEE /* XibTableViewCell.swift */,
 				188C5C032757F58E00FDCDEE /* XibTableViewCell.xib */,
 				18E54EC02750131F00E02C77 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				18E54EB52750131E00E02C77 /* AppDelegate.swift in Sources */,
 				18E54ECD2750168B00E02C77 /* PhonesSpecificationsEntity+CoreDataClass.swift in Sources */,
 				18E54EBF2750131E00E02C77 /* PhonesData.xcdatamodeld in Sources */,
+				188C5C072757FDA500FDCDEE /* PhoneViewController.swift in Sources */,
 				188C5C042757F58E00FDCDEE /* XibTableViewCell.swift in Sources */,
 				18E54EB72750131E00E02C77 /* SceneDelegate.swift in Sources */,
 			);
