@@ -31,6 +31,9 @@ class PhoneViewController: UIViewController {
     //ViewController input data->
     public var currentDataPhone: PhonesSpecificationsEntity?
     
+    //ViewController <- output data
+    private var newDataPhone: PhonesSpecificationsEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -145,6 +148,23 @@ class PhoneViewController: UIViewController {
         return status
     }
 
+    func readDatafromUIView(phone: PhonesSpecificationsEntity?){
+        
+        phone?.photo = photoIV.image?.pngData()
+        phone?.release_date = dateReleaseDP.date
+        
+        phone?.name = nameTF.text
+        phone?.brand = brandTF.text
+        phone?.model = modelTF.text
+        phone?.display = displayTF.text
+        phone?.cpu = cpuTF.text
+        phone?.gpu = gpuTF.text
+        phone?.ram = ramTF.text
+        phone?.storage = storageTF.text
+        phone?.os = osTF.text
+        phone?.camera = cameraTF.text
+        phone?.battery = batteryTF.text
+    }
     
     @objc func didTapSave() {
         if validate() == true {
@@ -153,9 +173,11 @@ class PhoneViewController: UIViewController {
     }
     
     @objc func didTapAdd() {
-        
+        if validate() == true {
+            newDataPhone = PhonesSpecificationsEntity(context: ViewController().context)
+            readDatafromUIView(phone: newDataPhone)
             completion?(true)
-        
+        }
     }
     
     @IBAction func didTapOperationsSC(_ sender: UISegmentedControl) {

@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         vc.title = "Additing"
         vc.completion = { (status) in
             self.navigationController?.popToRootViewController(animated: true)
+            self.createUpdateItem(status: status)
         }
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -43,6 +44,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! XibTableViewCell
+        
         if let img = models[indexPath.row].photo{
             cell.imageIV.image = UIImage(data: img)
             cell.brandTF.text = models[indexPath.row].brand
@@ -78,5 +80,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func createUpdateItem(status: Bool) {
+        if status {
+            saveItem()
+            getAllItems()
+        }
+    }
+    
+    func saveItem(){
+        do{
+            try context.save()
+        }catch{
+            //error
+        }
+    }
 }
 

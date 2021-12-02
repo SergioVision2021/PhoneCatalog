@@ -98,9 +98,6 @@
                                                             <segment title="First"/>
                                                             <segment title="Edit"/>
                                                         </segments>
-                                                        <connections>
-                                                            <action selector="didTapOperationsSC:" destination="Qnn-Ns-cwo" eventType="valueChanged" id="ewL-mN-cdh"/>
-                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -379,6 +376,7 @@
                         <outlet property="gpuTF" destination="75c-hX-fo4" id="jcQ-Rd-rzt"/>
                         <outlet property="modelTF" destination="0hC-Vi-ESd" id="U4v-84-zvr"/>
                         <outlet property="nameTF" destination="D0x-K2-AGU" id="mqo-1B-Nqa"/>
+                        <outlet property="operationsSC" destination="NR0-Sc-6e4" id="qn5-Bf-lt1"/>
                         <outlet property="osTF" destination="uy8-FW-btY" id="ZJp-wk-Pq7"/>
                         <outlet property="photoIV" destination="etr-FS-fsZ" id="QtI-iN-D1b"/>
                         <outlet property="ramTF" destination="igM-2y-UAk" id="7NO-P9-g3H"/>
