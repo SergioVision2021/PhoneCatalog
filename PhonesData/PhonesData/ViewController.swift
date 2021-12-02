@@ -64,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         vc.completion = { (status) in
             self.navigationController?.popToRootViewController(animated: true)
-
+            self.createUpdateItem(status: status)
         }
         navigationController?.pushViewController(vc, animated: true)
     }

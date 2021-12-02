@@ -123,6 +123,14 @@ class PhoneViewController: UIViewController {
         return arr
     }
     
+    func alert(title: String, message: String){
+        let sheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "Continue",
+                                      style: .cancel,
+                                      handler: nil ))
+        present(sheet,animated: true)
+    }
+    
     func validate() -> Bool {
 
         let arrTF = arrayTextField()
@@ -132,6 +140,7 @@ class PhoneViewController: UIViewController {
             status = true
         }else{
             photoIV.backgroundColor = #colorLiteral(red: 0.9813225865, green: 0.5692123971, blue: 0.5307256024, alpha: 1)
+            alert(title: "You have not chosen a picture!", message: "Choose a picture")
             status = false
         }
         
@@ -139,6 +148,7 @@ class PhoneViewController: UIViewController {
             if i.text?.isEmpty ?? true{
                 i.backgroundColor = #colorLiteral(red: 0.9813225865, green: 0.5692123971, blue: 0.5307256024, alpha: 1)
                 status = false
+                alert(title: "You have not filled out the text box!", message: "Fill in the field")
                 
             }else {
                 i.backgroundColor = #colorLiteral(red: 0.4500938654, green: 0.9813225865, blue: 0.4743030667, alpha: 1)
@@ -168,6 +178,7 @@ class PhoneViewController: UIViewController {
     
     @objc func didTapSave() {
         if validate() == true {
+            readDatafromUIView(phone: currentDataPhone)
             completion?(true)
         }
     }

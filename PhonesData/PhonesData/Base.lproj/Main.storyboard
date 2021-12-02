@@ -95,9 +95,12 @@
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NR0-Sc-6e4">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="32"/>
                                                         <segments>
-                                                            <segment title="First"/>
+                                                            <segment title="Detail"/>
                                                             <segment title="Edit"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="didTapOperationsSC:" destination="Qnn-Ns-cwo" eventType="valueChanged" id="VKF-cl-KFj"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
