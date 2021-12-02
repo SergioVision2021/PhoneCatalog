@@ -18,11 +18,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         table.register(UINib(nibName: "XibTableViewCell", bundle: nil), forCellReuseIdentifier: "cellID")
         
         table.delegate = self
         table.dataSource = self
+        
+        
+
         getAllItems()
+        
+        if models.isEmpty {
+            testData()
+        }
+        
     }
 
     @IBAction func didTapAddPhone(_ sender: UIBarButtonItem) {
@@ -36,6 +45,8 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+//Mark: - Extension ViewController
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,6 +122,81 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }catch{
             //error
         }
+    }
+}
+
+extension ViewController {
+    func testData(){
+        
+        var testphone: PhonesSpecificationsEntity?
+        
+        testphone = PhonesSpecificationsEntity(context: ViewController().context)
+        testphone?.brand = "HONOR"
+        testphone?.model = "50"
+        testphone?.name = "8GB/256GB"
+        testphone?.display = "6.57"
+        testphone?.os = "Android 11"
+        testphone?.photo = UIImage(named: "phone1")?.pngData()
+        testphone?.cpu = "Qualcomm Snapdragon 778G"
+        testphone?.gpu = "Adreno 642L"
+        testphone?.camera = "100"
+        testphone?.ram = "6"
+        testphone?.storage = "256"
+        testphone?.release_date = Date()
+        testphone?.battery = "5000"
+        
+        createUpdateItem(status: true)
+        
+        testphone = PhonesSpecificationsEntity(context: ViewController().context)
+        testphone?.brand = "Samsung"
+        testphone?.model = "S8"
+        testphone?.name = "4GB/256GB"
+        testphone?.display = "6"
+        testphone?.os = "Android 10"
+        testphone?.photo = UIImage(named: "phone2")?.pngData()
+        testphone?.cpu = "Qualcomm Snapdragon 33G"
+        testphone?.gpu = "Adreno 650L"
+        testphone?.camera = "18"
+        testphone?.ram = "8"
+        testphone?.storage = "64"
+        testphone?.release_date = Date()
+        testphone?.battery = "4500"
+        
+        createUpdateItem(status: true)
+        
+        testphone = PhonesSpecificationsEntity(context: ViewController().context)
+        testphone?.brand = "Huawei"
+        testphone?.model = "nova 8i"
+        testphone?.name = "NEN-L22 6GB/128GB"
+        testphone?.display = "6.67"
+        testphone?.os = "Android 10"
+        testphone?.photo = UIImage(named: "phone3")?.pngData()
+        testphone?.cpu = "Qualcomm Snapdragon 662"
+        testphone?.gpu = "Adreno 610"
+        testphone?.camera = "64"
+        testphone?.ram = "6"
+        testphone?.storage = "128"
+        testphone?.release_date = Date()
+        testphone?.battery = "4300"
+        
+        createUpdateItem(status: true)
+        
+        testphone = PhonesSpecificationsEntity(context: ViewController().context)
+        testphone?.brand = "Apple"
+        testphone?.model = "iPhone 13"
+        testphone?.name = "128GB"
+        testphone?.display = "6.1 Oled"
+        testphone?.os = "iOS 15"
+        testphone?.photo = UIImage(named: "phone4")?.pngData()
+        testphone?.cpu = "Apple A15 Bionic"
+        testphone?.gpu = "A15"
+        testphone?.camera = "12"
+        testphone?.ram = "4"
+        testphone?.storage = "128"
+        testphone?.release_date = Date()
+        testphone?.battery = "4600"
+        
+        createUpdateItem(status: true)
     }
 }
 
