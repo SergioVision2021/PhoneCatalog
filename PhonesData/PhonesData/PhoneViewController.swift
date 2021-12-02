@@ -58,30 +58,6 @@ class PhoneViewController: UIViewController {
         
     }
     
-    // MARK: - Navigation
-    
-    @objc func didTapSave() {
-        completion?(true)
-    }
-    
-    @objc func didTapAdd() {
-        completion?(true)
-    }
-    
-
-    @IBAction func didTapOperationsSC(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            styleElements(state: false)
-        case 1:
-            styleElements(state: true)
-        default:
-            break
-        }
-    }
-    
-    
-    
     func styleElements(state: Bool){
         navigationItem.rightBarButtonItem?.isEnabled = state
         
@@ -125,5 +101,76 @@ class PhoneViewController: UIViewController {
             batteryTF.text = currentDataPhone?.battery
             dateReleaseDP.date = releaseDate
         }
+    }
+    
+    func arrayTextField() -> [UITextField]{
+        var arr: [UITextField] = []
+        arr.append(nameTF)
+        arr.append(brandTF)
+        arr.append(modelTF)
+        arr.append(storageTF)
+        arr.append(ramTF)
+        arr.append(osTF)
+        arr.append(gpuTF)
+        arr.append(cpuTF)
+        arr.append(displayTF)
+        arr.append(cameraTF)
+        arr.append(batteryTF)
+
+        return arr
+    }
+    
+    func validate() -> Bool {
+
+        let arrTF = arrayTextField()
+        var status = true
+        
+        if let image: UIImage = photoIV.image{
+            status = true
+        }else{
+            photoIV.backgroundColor = #colorLiteral(red: 0.9813225865, green: 0.5692123971, blue: 0.5307256024, alpha: 1)
+            status = false
+        }
+        
+        for i in arrTF {
+            if i.text?.isEmpty ?? true{
+                i.backgroundColor = #colorLiteral(red: 0.9813225865, green: 0.5692123971, blue: 0.5307256024, alpha: 1)
+                status = false
+                
+            }else {
+                i.backgroundColor = #colorLiteral(red: 0.4500938654, green: 0.9813225865, blue: 0.4743030667, alpha: 1)
+            }
+        }
+
+        return status
+    }
+
+    
+    @objc func didTapSave() {
+        if validate() == true {
+            completion?(true)
+        }
+    }
+    
+    @objc func didTapAdd() {
+        
+            completion?(true)
+        
+    }
+    
+    @IBAction func didTapOperationsSC(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            styleElements(state: false)
+        case 1:
+            styleElements(state: true)
+        default:
+            break
+        }
+    }
+    
+    @IBAction func didTapDownloadPhoto(_ sender: UIButton) {
+        let random = Int.random(in: 1...4)
+        photoIV.image = UIImage(named: "phone\(random)")
     }
 }

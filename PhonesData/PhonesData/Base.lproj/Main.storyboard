@@ -119,6 +119,9 @@
                                                     <imageReference key="image" image="folder" catalog="system" symbolScale="large"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapDownloadPhoto:" destination="Qnn-Ns-cwo" eventType="touchUpInside" id="M0N-VA-83M"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtc-Y2-NGG">
                                                 <rect key="frame" x="15" y="632.5" width="394" height="21.5"/>
