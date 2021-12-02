@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @IBAction func didTapAddPhone(_ sender: UIBarButtonItem) {
         guard let vc = storyboard?.instantiateViewController(identifier: "phoneVCID") as? PhoneViewController else { return }
         vc.navigationItem.largeTitleDisplayMode = .never
-        vc.title = "Editing"
+        vc.title = "Additing"
         vc.completion = { (status) in
             self.navigationController?.popToRootViewController(animated: true)
         }
@@ -50,6 +50,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.osTF.text = models[indexPath.row].os
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let vc = storyboard?.instantiateViewController(identifier: "phoneVCID") as? PhoneViewController else { return }
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.title = "Editing"
+        vc.currentDataPhone = models[indexPath.row]
+        
+        vc.completion = { (status) in
+            self.navigationController?.popToRootViewController(animated: true)
+
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func getAllItems() {

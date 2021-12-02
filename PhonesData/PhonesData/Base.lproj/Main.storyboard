@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,14 +20,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n0B-qL-YIb">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="XJa-yS-Afi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Pk0-1e-OSF">
-                                        <rect key="frame" x="0.0" y="68.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pk0-1e-OSF" id="W4u-2O-lxp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -46,7 +42,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Phones" id="1Pk-gw-AEo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="tFd-cC-mJu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tFd-cC-mJu">
                             <connections>
                                 <action selector="didTapAddPhone:" destination="BYZ-38-t0r" id="amb-1H-mTp"/>
                             </connections>
@@ -114,6 +110,16 @@
                                                     <constraint firstAttribute="height" constant="550" id="4aC-GW-Ud8"/>
                                                 </constraints>
                                             </imageView>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUU-zi-wAX">
+                                                <rect key="frame" x="15" y="51" width="149.5" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title=" download image">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                    <color key="titleShadowColor" white="0.38" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <imageReference key="image" image="folder" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                </state>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtc-Y2-NGG">
                                                 <rect key="frame" x="15" y="632.5" width="394" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -281,6 +287,7 @@
                                             <constraint firstAttribute="trailing" secondItem="etr-FS-fsZ" secondAttribute="trailing" id="KmN-Uo-w7R"/>
                                             <constraint firstItem="rF3-LI-MII" firstAttribute="leading" secondItem="EIp-KS-sG8" secondAttribute="leading" constant="10" id="Kpz-Du-Hty"/>
                                             <constraint firstItem="IyT-JS-TwQ" firstAttribute="top" secondItem="URH-vM-BRM" secondAttribute="bottom" constant="10" id="LHD-uf-QWM"/>
+                                            <constraint firstItem="kUU-zi-wAX" firstAttribute="top" secondItem="eQX-lb-TjA" secondAttribute="bottom" constant="15" id="MMP-gu-G4a"/>
                                             <constraint firstAttribute="trailing" secondItem="fdr-wq-FT5" secondAttribute="trailing" constant="10" id="Nra-QJ-iDa"/>
                                             <constraint firstItem="Eiq-nn-T66" firstAttribute="leading" secondItem="EIp-KS-sG8" secondAttribute="leading" constant="15" id="O9K-ib-Owr"/>
                                             <constraint firstAttribute="trailing" secondItem="Is8-vR-dwO" secondAttribute="trailing" constant="10" id="ONN-Bl-hUO"/>
@@ -324,6 +331,7 @@
                                             <constraint firstItem="iaS-GP-Ju8" firstAttribute="top" secondItem="fdr-wq-FT5" secondAttribute="bottom" constant="5" id="lxf-wJ-nZm"/>
                                             <constraint firstAttribute="trailing" secondItem="URH-vM-BRM" secondAttribute="trailing" constant="10" id="mo9-2J-tCr"/>
                                             <constraint firstItem="2hN-Fb-Bn9" firstAttribute="leading" secondItem="EIp-KS-sG8" secondAttribute="leading" constant="15" id="oEp-Ir-mBo"/>
+                                            <constraint firstItem="kUU-zi-wAX" firstAttribute="leading" secondItem="EIp-KS-sG8" secondAttribute="leading" constant="15" id="pqP-wP-osf"/>
                                             <constraint firstItem="Wtc-Y2-NGG" firstAttribute="leading" secondItem="EIp-KS-sG8" secondAttribute="leading" constant="15" id="q1X-DX-nYE"/>
                                             <constraint firstAttribute="trailing" secondItem="jQI-1P-zax" secondAttribute="trailing" constant="10" id="qe8-l3-eBF"/>
                                             <constraint firstItem="tt3-Wh-9Jt" firstAttribute="top" secondItem="etr-FS-fsZ" secondAttribute="bottom" constant="10" id="r1h-Lq-lv8"/>
@@ -358,12 +366,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="battaryTF" destination="iaS-GP-Ju8" id="Rgc-2q-m7O"/>
+                        <outlet property="batteryTF" destination="iaS-GP-Ju8" id="g5x-Ps-jT0"/>
                         <outlet property="brandTF" destination="URH-vM-BRM" id="iZB-TG-mk2"/>
                         <outlet property="cameraTF" destination="HRu-CK-0ga" id="gE8-fv-gUT"/>
                         <outlet property="cpuTF" destination="TbS-vo-nCl" id="F8B-U2-SGj"/>
                         <outlet property="dateReleaseDP" destination="5kH-ls-Opb" id="TAI-vA-LDU"/>
                         <outlet property="displayTF" destination="T9r-KP-CU5" id="es6-Rn-mzL"/>
+                        <outlet property="downloadPhotoBt" destination="kUU-zi-wAX" id="aim-1I-JQp"/>
                         <outlet property="gpuTF" destination="75c-hX-fo4" id="jcQ-Rd-rzt"/>
                         <outlet property="modelTF" destination="0hC-Vi-ESd" id="U4v-84-zvr"/>
                         <outlet property="nameTF" destination="D0x-K2-AGU" id="mqo-1B-Nqa"/>
@@ -374,10 +383,14 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2601" y="100"/>
+            <point key="canvasLocation" x="1780" y="88"/>
         </scene>
     </scenes>
     <resources>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
