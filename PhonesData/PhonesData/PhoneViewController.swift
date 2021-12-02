@@ -25,6 +25,8 @@ class PhoneViewController: UIViewController {
     @IBOutlet weak var dateReleaseDP: UIDatePicker!
     
     
+    public var completion: ((Bool) -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,11 @@ class PhoneViewController: UIViewController {
     // MARK: - Navigation
     
     @objc func didTapSave() {
+        completion?(true)
     }
     
 
-
+    @IBAction func didTapOperationsSC(_ sender: Any) {
+    }
+    
 }
