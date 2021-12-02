@@ -28,7 +28,7 @@ class PhoneViewController: UIViewController {
     //<- output data DetailEditViewController
     public var completion: ((Bool) -> Void)?
     
-    //ViewController input data->
+    //ViewController input data->   <- output data DetailEditViewController
     public var currentDataPhone: PhonesSpecificationsEntity?
     
     //ViewController <- output data
@@ -136,7 +136,7 @@ class PhoneViewController: UIViewController {
         let arrTF = arrayTextField()
         var status = true
         
-        if let image: UIImage = photoIV.image{
+        if let image = photoIV.image{
             status = true
         }else{
             photoIV.backgroundColor = #colorLiteral(red: 0.9813225865, green: 0.5692123971, blue: 0.5307256024, alpha: 1)

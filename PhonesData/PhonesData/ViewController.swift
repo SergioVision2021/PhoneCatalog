@@ -69,6 +69,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            deleteItem(item: models[indexPath.row])
+            createUpdateItem(status: true)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
+    
+    func deleteItem(item: PhonesSpecificationsEntity){
+        context.delete(item)
+    }
+    
     func getAllItems() {
         do{
             models = try context.fetch(PhonesSpecificationsEntity.fetchRequest())

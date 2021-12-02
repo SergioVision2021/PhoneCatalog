@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "filename" : "icons8-png-40.png",
+      "filename" : "catalog.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "icons8-png-60.png",
+      "filename" : "catalog-2.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"

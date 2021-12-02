@@ -49,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DA192B2758DC6A00EFCF53 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				188C5C032757F58E00FDCDEE /* XibTableViewCell.xib */,
+				188C5C022757F58E00FDCDEE /* XibTableViewCell.swift */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		18E54EA82750131E00E02C77 = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +84,7 @@
 				18E54EB82750131E00E02C77 /* ViewController.swift */,
 				18E54EBA2750131E00E02C77 /* Main.storyboard */,
 				188C5C062757FDA500FDCDEE /* PhoneViewController.swift */,
-				188C5C022757F58E00FDCDEE /* XibTableViewCell.swift */,
-				188C5C032757F58E00FDCDEE /* XibTableViewCell.xib */,
+				18DA192B2758DC6A00EFCF53 /* Xib */,
 				18E54EC02750131F00E02C77 /* Assets.xcassets */,
 				18E54EC22750131F00E02C77 /* LaunchScreen.storyboard */,
 				18E54EC52750131F00E02C77 /* Info.plist */,
